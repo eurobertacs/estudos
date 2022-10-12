@@ -1,2 +1,2 @@
 # estudos
-Repositórios de estudos técnicos
+Repositório de estudos técnicos
