@@ -1,28 +1,31 @@
-// Declarações
-let a,b,c;
-a=5;
-b=6;
-c=7;
+// Diferença entre texto e número
+console.log (5 + 5);
+console.log(1);
+console.log ("5 + 5"); 
+console.log("1");
 
-// Outro exemplo de declaração
-let d,e,f; d=5; e=6; f=7;
+// Variável
+var a = 1;
+var b = 5;
+var c = a + b;
+var d = a * b;
+var e = a / b;
+var f = a - b;
 
-// espaços em brancos aceitos no javascript
-let nome="Fulano";
-let sobrenome = "de Tal" ;
+console.log(c);
+console.log(d);
+console.log(e);
+console.log(f);
 
-// Exemplos de declarações com quebras de linha
-document.getElementById("texto").innerHTML = 
-    "Meu primeiro texto <b>JS</b>";
+// Exemplo de nomes de variáveis que são case sensitive
+var NOME = "Fulano";
+var nome = "De Tal";
 
-document
-    .getElementById("texto").innerHTML = 
-    "Meu primeiro texto <b>JS</b>";
+console.log(NOME);
+console.log(nome);
+//console.log(Pessoa);
 
-// Declarações em bloco
-function minhaFuncao() {
-    document.write(5 + 5);
-    document.write(5 + 5);
-    document.write(5 + 5);
-    document.write(5 + 5);
-}
+// Exemplos de nomes de variáveis aceitos
+var primeiro_nome;
+var primeiroNome; // recomendado
+//var primeiro-nome; 
