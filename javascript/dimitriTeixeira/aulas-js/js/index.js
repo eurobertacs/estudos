@@ -1,87 +1,123 @@
-/* Vamos entender variáveis
-Variáveis são "recipientes" onde podemos armazenar informações que 
-podem variar, ou seja, podem ter qualquer tipo de valor.
+/* Vamos entender operadores
+-> Os operadores JavaScript são usados para atribuir valores, comparar
+valores, executar operações aritméticas e muito mais.
 
-No Javascript temos 3 palavras-chave para declarar variáveis:
--> var
--> let
--> const
+São os sinais que usamos: + - * / = ++ -- += -= && || etc...
+
+São separados em 6 "categorias":
+
+1) Operadores aritméticos (matemáticos)
+2) Operadores de atribuição
+3) Operadores de sequencia 
+4) Operadores de comparação
+5) Operadores de Condicional (Ternário)
+6) Operadores Lógicos
+
 */
 
-var pote = "Bombom";
-alert(pote);
+var valor1, valor2, soma, sub, mult, divi, incr, decr;
+valor1 = 5;
+valor2 = 2;
 
-var a = 2;
-var b = 3;
-var c = a + b;
-alert(c);
+soma = valor1 + valor2;
+sub = valor1 - valor2;
+mult = valor1 * valor2;
+divi = valor1 / valor2;
+incr = ++valor1;
+decr = --valor2;
 
-// ATENÇÃO: Como organizar o código?
-// declarando as variáveis
-var d, e, f, g, h, i;
+alert('Soma: ' + soma);
+alert('Subtração: ' + sub);
+alert('Multiplicação: ' + mult);
+alert('Divisão: ' + divi);
+alert('Incremento: ' + incr + ' valor1: ' + valor1);
+alert('Decremento: ' + decr + ' valor2: ' + valor2);
 
-// atribuindo as variáveis
-d = 2;
-e = 3;
-f = d + e;
-alert(f);
+valor1 += valor2;
+alert('Soma: ' + valor1);
 
-i = g + h;
-alert(g); // undefined
-alert(i); // NaN
+valor1 -= valor2; 
+alert('Subtração: ' + valor1);
 
-// variáveis texto
-var nome, sobrenome, nomeCompleto, pessoa, soma;
+valor1 *= valor2; 
+alert('Multiplicação: ' + valor1);
 
-nome = "Dimitri";
-sobrenome = "Teixeira";
-idade = 30;
+valor1 /= valor2; 
+alert('Divisão: ' + valor1);
 
-nomeCompleto = nome + sobrenome;
-pessoa = idade + nome;
+valor1 = "Dimitri ";
+valor2 = "Teixeira";
 
-document.getElementById("texto").innerHTML = nomeCompleto;
-document.getElementById("texto").innerHTML = pessoa;
+soma = valor1 + valor2;
 
-pessoa = idade + 10 + nome;
+alert('Soma de duas strings ' + soma);
 
-document.getElementById("texto").innerHTML = pessoa;
+// Uso de operadores de comparação
+var a,b, c, d, opComp;
 
-pessoa = nome + idade + 10;
+a = 8;
+b = 10;
+c = 8;
+d = "8";
 
-document.getElementById("texto").innerHTML = pessoa;
+opComp = (a == b);
+alert ('Resultado comparação a == b ' + opComp);
 
-// Recomendação
-soma = idade + 10;
+opComp = (a == c);
+alert ('Resultado comparação a == c ' + opComp);
 
-pessoa = nome + soma; 
+opComp = (a == d);
+alert ('Resultado comparação a == d ' + opComp);
 
-document.getElementById("texto").innerHTML = pessoa;
+opComp = (a === d);
+alert ('Resultado comparação a === d ' + opComp);
 
-pessoa = nome + " " + soma;
+opComp = (a === c);
+alert ('Resultado comparação a === c ' + opComp);
 
-document.getElementById("texto").innerHTML = pessoa;
+opComp = (a != b);
+alert ('Resultado comparação a != b ' + opComp);
 
-nomeCompleto = nome + " " + sobrenome;
+opComp = (a != c);
+alert ('Resultado comparação a != c ' + opComp);
 
-document.getElementById("texto").innerHTML = nomeCompleto;
+opComp = (a != d);
+alert ('Resultado comparação a != d ' + opComp);
 
-// Uso do Let
-let nomePessoa = "Dimitri";
-//let nomePessoa = "Teixeira"; não pode ser redeclarado.
+opComp = (a !== d);
+alert ('Resultado comparação a !== d ' + opComp);
 
-var x = 10;
-let y = 11;
-const z = 12;
+opComp = (a !== c);
+alert ('Resultado comparação a !== c ' + opComp);
 
-{
-    var x = 2;
-    let y = 3;
-    const z = 4;
-}
+opComp = (a > b);
+alert ('Resultado comparação a > b ' + opComp);
 
-document.getElementById("texto").innerHTML = x;
+opComp = (a >= b);
+alert ('Resultado comparação a >= b ' + opComp);
 
-document.getElementById("texto").innerHTML = y;
+opComp = (a < b);
+alert ('Resultado comparação a < b ' + opComp);
 
-document.getElementById("texto").innerHTML = z;
+opComp = (a <= b);
+alert ('Resultado comparação a <= b ' + opComp);
+
+// Operador Ternário
+var idade, idade2, eleitor, resultado;
+idade = 17;
+idade2 = 25;
+eleitor = (idade <= 18) ? "não eleitor" : "sim eleitor";
+alert ('A resposta é ' + eleitor + ' a idade dele é de: ' + idade);
+
+eleitor = (idade2 <= 18) ? "não eleitor" : "sim eleitor";
+alert ('A resposta é ' + eleitor + ' a idade dele é de: ' + idade2);
+
+//Operadores lógicos
+resultado = (idade > 60 && idade < 70);
+alert (resultado);
+
+resultado = (idade === 65 || idade === 72);
+alert(resultado);
+
+resultado = !(idade === 65);
+alert(resultado);
