@@ -1,47 +1,37 @@
-/* Funções
-Uma função JavaScript é um bloco de código projetado para executar uma 
-tarefa específica.
+/* Objetos
+Objetos são basicamente variáveis com muitos valores dentro.
 
-É como uma pequena "fábrica" onde você faz uma entrada e ele te dá uma
-saída.
+Exemplo: const carro = {marca:"ford", modelo:"ka", ano: 2015}
 
-Pode ser encarado como um "mini-programas" projetados para fazer uma tarefa 
-que vai contribuir para todo código.
+Os valores dentro de um objeto são chamados propriedades.
 
-Uma função JavaScript é executada quando algo a invoca (chama-a).
+Objetos também podem ter métodos. Um método é uma função colocadas dentro
+de uma propriedade.
+
 */
+// Exemplos
+const carro = { marca: "ford", modelo: "ka", ano: 2015, placa: "ABC-1234"};
 
-// Função de soma
-function soma(valor1, valor2){
-    return valor1 + valor2;
-}
+// Outra forma de escrever e mais recomendada
+const outroCarro = {
+    marca: "fiat",
+    modelo: "elba",
+    ano: 1990,
+    placa: "ABC-6789",
+    buzina: function() {alert('Biiiiiiiiiiiiii')},
+    completo: function() {
+        return "A marca é " + this.marca + " e o modelo é " + this.modelo + "."; 
+    }
+};
 
-// Função de conversão de real para dólar
-function converterRealParaDolar(real,cotacaoDolar){
-    return real * cotacaoDolar;
-}
+console.log(carro);
+console.log(outroCarro);
+console.log(carro.ano);
+console.log(outroCarro.ano);
+console.log(carro.placa);
+console.log(outroCarro.placa);
+console.log(carro["marca"]);
+console.log(outroCarro["marca"]);
+console.log(outroCarro.completo());
 
-document.getElementById("texto").innerHTML = soma(10,10);
-
-var total = soma(10,23);
-alert(total);
-
-var valorReal = 7.89;
-var cotacaoDolar = 5.08;
-var valorConvertido = converterRealParaDolar(valorReal,cotacaoDolar);
-
-alert("O valor em real é R$ " + valorReal + " e o valor em dólar é U$ " + valorConvertido);
-
-// Exemplo preliminar de função de evento
-function alertaHello(){
-    alert("Olá pessoal");
-}
-
-alertaHello();
-
-function paraCelsius(valorFahrenheit){
-    return (5 / 9) * (valorFahrenheit - 32);
-}
-
-var celsius = paraCelsius(77);
-alert("A temperatura é de " + celsius + " graus Celsius.")
+outroCarro.buzina();
