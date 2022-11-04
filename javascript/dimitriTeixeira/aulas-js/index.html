@@ -11,10 +11,30 @@
         }
     </style>
 </head>
-<body>
-    <h1>Aprendendo Javascript</h1>
+<body onload="alert('Terminou de carregar')" onresize="alert('Houve um redimensionamento')">
+    <h1>Eventos Javascript</h1>
     <p id="texto"> </p>
-    <button onclick="">Clique aqui</button>
+    <button onclick="eventoClick()">Clique aqui</button><br>
+    <button ondblclick="eventoDuploClick()">Duplo clique aqui</button><br><br>
+
+    <select id="itens" onchange="mudou()">
+        <option value="1">Valor 1</option>
+        <option value="2">Valor 2</option>
+        <option value="3">Valor 3</option>
+        <option value="4">Valor 4</option>
+    </select>
+    <br><br>
+
+    <div id="teste" onmousedown="alert('Clicou na tela')" onmousemove="adicionaTexto()" 
+        onmouseout="viraAzul()" onmouseover="viraVermelho()" 
+        style="margin:auto auto; width:80%; height: 200px; background: blue;">
+    </div><br>
+
+    <input onkeypress="teclaPressionada()" onmouseup="alert('Clicou e soltou na tela')" id="campoTexto" style="padding: 80px; font: size 40px;" type="text" 
+        placeholder="Digite alguma coisa"> <br><br>
+
+    <input onkeydown="teclaPressionada()" onblur="eventoClick()" onfocus="limpaTexto()" id="campoTexto2" style="padding: 80px; font: size 40px;" type="text" 
+        placeholder="Digite alguma coisa" value="Já vem com texto">
     <script src="js/index.js"></script>
 </body>
 </html>

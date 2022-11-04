@@ -1,37 +1,63 @@
-/* Objetos
-Objetos são basicamente variáveis com muitos valores dentro.
+/* Eventos
+Eventos são ações disparadas pela interação dos usuários na página.
+É o correto manejo desses eventos que tornam as páginas interativas e
+dinâmicas.
 
-Exemplo: const carro = {marca:"ford", modelo:"ka", ano: 2015}
+Existem muitos eventos. Vejam os mais utilizados:
 
-Os valores dentro de um objeto são chamados propriedades.
-
-Objetos também podem ter métodos. Um método é uma função colocadas dentro
-de uma propriedade.
+onclick -> Disparado quando recebe um clique.
+ondblclick -> Disparado quando houver clique duplo.
+oumouserover -> Disparado quando o mouse está sobre.
+onmouseout -> Disparado quando o mouse é movido para fora do elemento.
+onmousemove -> Disparado quando o mouse é movido no elemento.
+onmousedown -> Disparado quando o clique do botão foi pressionado.
+onmouseup -> Disparado quando o clique do botão é liberado.
+onfocus -> Disparado quando o elemento recebe o foco. Válido para input
+onchange -> Disparado quando existe uma mudança no conteúdo. "Ao mudar"
+onblur -> Disparado quando o elemento perde o foco.
+onkeydown -> Disparado quando uma tecla é pressionada.
+onkeypress -> Disparado quando uma tecla é pressionada e solta.
+onkeyup -> Disparado quando uma tecla é solta sobre um elemento.
+onload -> Disparado quando a página terminou de ser carregada.
+onresize -> Disparado quando há um redimensionamento da janela.    
 
 */
-// Exemplos
-const carro = { marca: "ford", modelo: "ka", ano: 2015, placa: "ABC-1234"};
 
-// Outra forma de escrever e mais recomendada
-const outroCarro = {
-    marca: "fiat",
-    modelo: "elba",
-    ano: 1990,
-    placa: "ABC-6789",
-    buzina: function() {alert('Biiiiiiiiiiiiii')},
-    completo: function() {
-        return "A marca é " + this.marca + " e o modelo é " + this.modelo + "."; 
-    }
-};
+function eventoClick() {
+    alert('Acionou um evento de click');
+    document.body.style.backgroundColor = "yellow";
+}
 
-console.log(carro);
-console.log(outroCarro);
-console.log(carro.ano);
-console.log(outroCarro.ano);
-console.log(carro.placa);
-console.log(outroCarro.placa);
-console.log(carro["marca"]);
-console.log(outroCarro["marca"]);
-console.log(outroCarro.completo());
+function eventoDuploClick() {
+    alert('Evento de duplo click');
+}
 
-outroCarro.buzina();
+function viraVermelho() {
+    let div = document.getElementById("teste");
+    div.style.backgroundColor = "red";
+}
+
+function viraAzul() {
+    let div = document.getElementById("teste");
+    div.style.backgroundColor = "blue";
+}
+
+/*
+function adicionaTexto() {
+    let p = document.getElementById("texto");
+    p.append('O mouse moveu <br>');
+}
+*/
+
+function limpaTexto() {
+    document.getElementById("campoTexto2").value = "";
+}
+
+function mudou() {
+    console.log('Mudou');
+}
+
+function teclaPressionada() {
+    let input = document.getElementById("campoTexto").value;
+    console.log(input);
+}
